@@ -54,7 +54,7 @@ define('UPLOADS',ASSETS.'uploads/');
 define('LDB_ENGINE', 'mysql');
 define('LDB_HOST', 'localhost');
 define('LDB_NAME', 'u4_pl_db');
-deifne('LDB_USER', 'root');
+define('LDB_USER', 'root');
 define('LDB_PASS', '');
 define('LDB_CHARSET', 'utf8');
 
@@ -63,6 +63,6 @@ define('LDB_CHARSET', 'utf8');
 define('DB_ENGINE', 'mysql');
 define('DB_HOST', 'localhost');
 define('DB_NAME', '___REMOTE DB___');
-deifne('DB_USER', '___REMOTE DB___');
+define('DB_USER', '___REMOTE DB___');
 define('DB_PASS', '___REMOTE DB___');
 define('DB_CHARSET', '___REMOTE CHARTSET___');
