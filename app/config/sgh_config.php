@@ -25,7 +25,7 @@ define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', getcwd().DS);
 
 define('APP',ROOT.'app'.DS);
-define('CLASSES',ROOT.'classes'.DS);
+define('CLASSES',APP.'classes'.DS);
 define('CONTROLLERS',APP.'controllers'.DS);
 define('FUNCTIONS',APP.'functions'.DS);
 define('CONFIG',APP.'config'.DS);
