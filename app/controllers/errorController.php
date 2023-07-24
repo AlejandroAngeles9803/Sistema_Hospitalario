@@ -2,6 +2,6 @@
 
 class errorController{
     function __construct(){
-        echo 'Ejecuntando'.__CLASS__;
+        echo 'Ejecutando'.__CLASS__;
     }
 }

@@ -98,7 +98,7 @@ class Sgh{
         require_once CLASSES.'Controller.php';
         require_once CONTROLLERS.DEFAULT_CONTROLLER.'Controller.php';
         require_once CONTROLLERS.DEFAULT_ERROR_CONTROLLER.'Controller.php';
-
+        require_once CONTROLLERS.'usersController.php';
         return;
     }
 
@@ -131,7 +131,7 @@ class Sgh{
         //Filtrar la URL y separar la URI
 
         $this->filter_url();
-
+        /////////////////////////////////////////////////////////////////////////////
         //Se necesita saber si se esta pasando el nombre de un controlador en el URI
         //this->uri[0] es el controlador solicitado
 
@@ -146,9 +146,31 @@ class Sgh{
         
 
         $controller = $current_controller.'Controller'; 
-        echo $current_controller;
         if(!class_exists($controller)){
             $controller = DEFAULT_ERROR_CONTROLLER.'Controller';
         }
+
+        //////////////////////////////////////////////////////////////////////////////
+        //Ejecución del método solicitado
+        if(isset($this->uri[1])){
+            $method = str_replace('-','_',$this->uri[1]);
+            echo $method;
+
+            //Verificar si existe el método de la clase a ejecutar (controlador)
+            if(!method_exists($controller,$method)){
+                
+                $controller = DEFAULT_ERROR_CONTROLLER.'Controller';
+                $current_method = DEFAULT_METHOD; //index
+            }else{
+                $current_method = $method;
+            }
+
+            unset($this->uir[1]);
+        }else{
+            $current_method = DEFAULT_METHOD; //index
+        }
+
+        print_r($this->uri);
+        echo $controller;
     }
 }
