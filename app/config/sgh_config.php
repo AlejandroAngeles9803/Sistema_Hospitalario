@@ -66,3 +66,10 @@ define('DB_NAME', '___REMOTE DB___');
 define('DB_USER', '___REMOTE DB___');
 define('DB_PASS', '___REMOTE DB___');
 define('DB_CHARSET', '___REMOTE CHARTSET___');
+
+
+//Constantes para el controlador, metodo y controladr de errores por defecto
+
+define('DEFAULT_CONTROLLER','home');
+define('DEFAULT_ERROR_CONTROLLER','error');
+define('DEFAULT_METHOD','index');
