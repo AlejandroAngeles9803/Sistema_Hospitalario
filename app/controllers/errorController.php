@@ -2,6 +2,6 @@
 
 class errorController{
     function __construct(){
-        echo 'Ejecutando'.__CLASS__;
+        echo '<h1>Error 404, Página no encontrada</h1>';
     }
 }

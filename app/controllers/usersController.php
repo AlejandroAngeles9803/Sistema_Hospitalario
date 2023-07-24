@@ -5,8 +5,10 @@ class usersController{
         echo 'Ejecutando'.__CLASS__;
     }
 
-
-    function ver(){
-        echo 'En el metodo ver';
+    function index(){
+        echo 'Prueba';
+    }
+    function ver($id=null){
+        echo sprintf('Perfil del usuario con id %s en la clase %s', $id,__ClASS__);
     }
 }

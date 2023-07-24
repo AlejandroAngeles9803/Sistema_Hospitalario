@@ -154,7 +154,7 @@ class Sgh{
         //Ejecución del método solicitado
         if(isset($this->uri[1])){
             $method = str_replace('-','_',$this->uri[1]);
-            echo $method;
+            //echo $method;
 
             //Verificar si existe el método de la clase a ejecutar (controlador)
             if(!method_exists($controller,$method)){
@@ -165,12 +165,35 @@ class Sgh{
                 $current_method = $method;
             }
 
-            unset($this->uir[1]);
+            unset($this->uri[1]);
         }else{
             $current_method = DEFAULT_METHOD; //index
         }
 
-        print_r($this->uri);
-        echo $controller;
+
+        //////////////////////////////////////////////////////////////////////////////
+        // Ejecutdo controlador y metodos de acuerdo la petición
+
+        $controller = new $controller;
+        
+
+        //Obtener los parametros del URI
+        $params = array_values(empty($this->uri) ? [] :$this->uri);
+
+
+        //Llamada del método que se solicita
+        if(empty($params)){
+            call_user_func([$controller, $current_method]);
+
+        }else{
+            call_user_func_array([$controller, $current_method], $params);
+        }
+
+        return;
+
+
+        //print_r($this->uri);
+        //print_r($params);
+        //echo $controller;
     }
 }
