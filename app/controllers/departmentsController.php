@@ -1,6 +1,6 @@
 <?php
 
-class homeController{
+class departmentsController{
 
     function __construct(){
     }
@@ -10,10 +10,10 @@ class homeController{
         $data = 
         [
             'title' => 'Sgh Framework',
-            'bg' => 'light'
+            'bg' => 'blue'
         ];
 
-        View::render('sgh',$data);
+        View::render('departments',$data);
         
     }
 }
