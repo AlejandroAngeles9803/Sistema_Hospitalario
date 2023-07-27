@@ -1,7 +1,10 @@
 <?php
 
-//Funcion de prueba
 
-function en_core(){
-    return 'En Core function';
+function to_object($array){
+    return json_decode(json_encode($array));
+}
+
+function get_sitename(){
+    return 'Sgh_Framework';
 }
