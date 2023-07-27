@@ -38,7 +38,7 @@ class Sgh{
      */
 
      private function init_session(){
-        if(!session_start()){
+        if(session_status() == PHP_SESSION_NONE){
             session_start();
         }
         return;
@@ -93,12 +93,17 @@ class Sgh{
      * @return void
      */
     private function init_autoload(){
-        require_once CLASSES.'Db.php';
-        require_once CLASSES.'Model.php';
-        require_once CLASSES.'Controller.php';
-        require_once CONTROLLERS.DEFAULT_CONTROLLER.'Controller.php';
-        require_once CONTROLLERS.DEFAULT_ERROR_CONTROLLER.'Controller.php';
-        require_once CONTROLLERS.'usersController.php';
+        require_once CLASSES.'AutoLoader.php';
+        Autoloader::init();
+        //require_once CLASSES.'Db.php';
+        //require_once CLASSES.'Model.php';
+        //require_once CLASSES.'View.php';
+        //require_once CLASSES.'Controller.php';
+        
+        
+        //require_once CONTROLLERS.DEFAULT_CONTROLLER.'Controller.php';
+        //require_once CONTROLLERS.DEFAULT_ERROR_CONTROLLER.'Controller.php';
+        
         return;
     }
 
@@ -147,7 +152,9 @@ class Sgh{
 
         $controller = $current_controller.'Controller'; 
         if(!class_exists($controller)){
+            $current_controller = DEFAULT_ERROR_CONTROLLER;
             $controller = DEFAULT_ERROR_CONTROLLER.'Controller';
+           
         }
 
         //////////////////////////////////////////////////////////////////////////////
@@ -161,6 +168,8 @@ class Sgh{
                 
                 $controller = DEFAULT_ERROR_CONTROLLER.'Controller';
                 $current_method = DEFAULT_METHOD; //index
+                $current_controller = DEFAULT_ERROR_CONTROLLER;
+
             }else{
                 $current_method = $method;
             }
@@ -169,6 +178,11 @@ class Sgh{
         }else{
             $current_method = DEFAULT_METHOD; //index
         }
+
+        //////////////////////////////////////////////////////////////////////////////
+        //Constantes para el metood y controlador
+        define('CONTROLLER',$current_controller);
+        define('METHOD',$current_method);
 
 
         //////////////////////////////////////////////////////////////////////////////
@@ -195,5 +209,16 @@ class Sgh{
         //print_r($this->uri);
         //print_r($params);
         //echo $controller;
+    }
+
+
+    /**
+     * Método para correr el framework
+     * 
+     * @return void
+     */
+    public static function fly(){
+        $sgh = new self();
+        return;
     }
 }
