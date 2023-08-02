@@ -8,3 +8,7 @@ function to_object($array){
 function get_sitename(){
     return 'Sgh_Framework';
 }
+
+function now(){
+    return date('Y-m-d H:i:s');
+}
