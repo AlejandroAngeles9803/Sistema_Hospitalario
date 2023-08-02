@@ -37,7 +37,7 @@
 <style>
     .grid{
         display: flex;
-        height: 90vh;
+        height: 82vh;
 
     }
 

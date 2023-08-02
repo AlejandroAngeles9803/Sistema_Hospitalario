@@ -1,39 +1,7 @@
 
 <?php require_once INCLUDES.'inc_header.php';?>
 
-    <nav class="wrapper-nav navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid content-right">
-            <a class="navbar-brand" href="">LOGO</a>
-            <button class="navbar-toggler" type="button">
-                <span class="navbar-toggler-icon">
 
-                </span>
-            </button>
-            <div>
-                
-                <div class="container-fluid content-left">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="">Servicios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="">Departamentos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="">Doctores</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="">Citas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link active"><img  class="rounded" src="\Proyecto_Hospital\assets\images\user-logo.png" alt="..." style="width:5vh"></a>
-                        </li>
-                    </ul>
-                </div>
-    </nav>
     <section class="wrap-container container-fluid ">
         <div class="container-md container-info">
             <h1 class="display-1"><strong>Nos preocupamos por ti y  tu salud.</strong>
@@ -72,7 +40,6 @@
         
     }
     </style>
-
 <?php require_once INCLUDES.'inc_footer.php';?>
 
 

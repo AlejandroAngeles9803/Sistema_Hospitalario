@@ -32,7 +32,7 @@
         <h1 class="mt-4">Neurología</h1>
         <p>El departamento de neurología es el mejor para diagnosticar y tratar incluso las condiciones neurológicas más
             difíciles.</p>
-        <button class="btn">
+        <button class="btn mt-5">
             <span class="blockquote ">Agenda una cita</span>
             <i class="fa-solid fa-arrow-right"></i>
         </button>
@@ -46,7 +46,7 @@
         <h1 class="mt-4">Farmacia</h1>
         <p >Nuestro departamento farmacéutico, le brindara las mejores preinscripciones para
         sus tratamientos.</p>
-        <button class="btn mt-4">
+        <button class="btn mt-5">
             <span class="blockquote ">Agenda una cita</span>
             <i class="fa-solid fa-arrow-right"></i>
         </button>
@@ -64,7 +64,7 @@
 .container-main {
     float: inline-start;
     position: absolute;
-    top: 27%;
+    top: 35%;
     width: 4.2vw;
 
 }
