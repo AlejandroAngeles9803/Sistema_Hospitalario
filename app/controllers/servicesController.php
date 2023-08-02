@@ -1,6 +1,6 @@
 <?php
 
-class servicesController{
+class servicesController extends Controller{
     
     function __construct(){
         
@@ -10,7 +10,8 @@ class servicesController{
         $data = 
     [
         'title' => 'Servicios',
-        'bg' => 'dark'
+        'bg' => 'dark',
+        'nav' => 'dark'
     ];
 
     View::render('services',$data);

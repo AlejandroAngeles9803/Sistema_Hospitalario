@@ -1,6 +1,6 @@
 <?php
 
-class departmentsController{
+class departmentsController extends Controller{
 
     function __construct(){
     }
